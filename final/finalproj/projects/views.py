@@ -22,12 +22,11 @@ def detail(request, project_id):
 
 
 def create_project(request):
-    form = ProjectForm(request.POST or None, request.FILES)
+    form = ProjectForm(request.POST, request.FILES)
 
     if form.is_valid():
-        new_form = form.save(commit=False)
-        new_form.created_by = request.user
-        new_form.save()
+        form.instance.created_by = request.user
+        form.save()
         return redirect('projects:index')
 
     return render(request, 'projects/project-form.html', {'form': form})
@@ -35,7 +34,7 @@ def create_project(request):
 
 def update_project(request, id):
     project = Project.objects.get(id=id)
-    form = ProjectForm(request.POST or None, request.FILES, instance=project)
+    form = ProjectForm(request.POST, request.FILES, instance=project)
 
     if form.is_valid():
         form.save()
