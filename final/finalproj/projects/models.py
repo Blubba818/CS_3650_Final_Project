@@ -25,7 +25,7 @@ class Project(models.Model):
     )
 
     name = models.CharField(max_length=200)
-    image = models.ImageField(upload_to='images/', default='images/project.jpg')
+    image = models.ImageField(upload_to='images/', default='images/checklist.png')
     description = models.CharField(max_length=1000)
     priority = models.CharField(max_length=200, choices=PriorityOptions)
     status = models.CharField(max_length=200, choices=StatusOptions)
