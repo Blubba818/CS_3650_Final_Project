@@ -1,0 +1,23 @@
+{% extends 'projects/base.html' %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            {% if project.created_by == user %}
+            <div class="col-md-6">
+                <img src="../media/{{ project.image }}" class="card" height="300px" alt="">
+            </div>
+            <div class="col-md-6">
+                <h1>{{ project.name }}</h1>
+                <h2>{{ project.description }}</h2>
+                <h3>Status: {{ project.get_status_display }}</h3>
+                <h3>Priority: {{ project.get_priority_display }}</h3>
+                <a href="{% url 'projects:update_project' project.id %}">Edit</a>
+                <a href="{% url 'projects:delete_project' project.id %}">Delete</a>
+            </div>
+            {% else %}
+            <h1>You are not authorized to view this project!</h1>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
