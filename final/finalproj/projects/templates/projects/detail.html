@@ -12,8 +12,8 @@
                 <h2>{{ project.description }}</h2>
                 <h3>Status: {{ project.get_status_display }}</h3>
                 <h3>Priority: {{ project.get_priority_display }}</h3>
-                <a href="{% url 'projects:update_project' project.id %}">Edit</a>
-                <a href="{% url 'projects:delete_project' project.id %}">Delete</a>
+                <a href="{% url 'projects:update_project' project.id %}" class="btn btn-primary">Edit</a>
+                <a href="{% url 'projects:delete_project' project.id %}" class="btn btn-danger">Delete</a>
             </div>
             {% else %}
             <h1>You are not authorized to view this project!</h1>
