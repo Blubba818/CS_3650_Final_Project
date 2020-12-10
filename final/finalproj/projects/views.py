@@ -22,7 +22,7 @@ def detail(request, project_id):
 
 
 def create_project(request):
-    form = ProjectForm(request.POST, request.FILES)
+    form = ProjectForm(request.POST or None, request.FILES or None)
 
     if form.is_valid():
         form.instance.created_by = request.user
@@ -34,7 +34,7 @@ def create_project(request):
 
 def update_project(request, id):
     project = Project.objects.get(id=id)
-    form = ProjectForm(request.POST, request.FILES, instance=project)
+    form = ProjectForm(request.POST or None, request.FILES or None, instance=project)
 
     if form.is_valid():
         form.save()

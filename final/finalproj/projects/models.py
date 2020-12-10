@@ -29,7 +29,6 @@ class Project(models.Model):
     description = models.CharField(max_length=1000)
     priority = models.CharField(max_length=200, choices=PriorityOptions)
     status = models.CharField(max_length=200, choices=StatusOptions)
-    date_added = models.DateField
     created_by = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def get_absolute_url(self):
