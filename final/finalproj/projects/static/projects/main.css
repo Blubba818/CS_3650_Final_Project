@@ -1,17 +1,14 @@
 body {
-    background-color: #4d4d4d !important;
+    background-color: #fafaff !important;
+    background: linear-gradient(to right, #fafaff, #ffffff, #fafaff);
 }
 
 h1, h2, h3, .navbar-brand, label, .btn, .navbar a {
-    font-family: 'Oswald', Arial, helvetica, sans-serif;
+    font-family: 'Patua One', Arial, helvetica, sans-serif;
 }
 
 .navbar-brand {
     font-size: 2rem !important;
-}
-
-p, label {
-    font-size: 1.1rem;
 }
 
 h4, h5, h6, p, form {
@@ -19,9 +16,8 @@ h4, h5, h6, p, form {
 }
 
 nav {
-    background: linear-gradient(to right, #ff0000, #ff1a1a, #ff0000);
-    box-shadow: black 10px 20px;
-    width: 95%;
+    background: linear-gradient(to right, #000066, #000080, #000066);
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -37,101 +33,99 @@ nav {
     color: #cccccc !important;
 }
 
-.navbar .navbar-nav .dropdown-menu {
-    position:absolute;
-}
-
-.dropdown-menu a, .dropdown-menu a:hover {
-    color: black !important;
-}
-
-.dropdown-menu a:active {
-    color: black !important;
-    background-color: red !important;
-}
-
-.dropdown-menu {
-    border-radius: 0 !important;
-    box-shadow: black 4px 10px;
-}
-
 .container {
+    width: 80%;
     margin: 0 auto;
-    padding: 5rem 10rem;
-    color: white;
-}
-
-#form-container {
-    text-align: center;
+    color: #00004d;
 }
 
 .row {
-    margin: 0 auto;
-    padding: 0 10rem;
+    width: 100%;
+    margin: 2rem auto;
+    padding: 1rem;
     display: flex;
     justify-content: space-around;
     flex-direction: row;
-}
-
-strong {
-    text-decoration: underline;
-}
-
-.btn {
-    color: white;
-    background: linear-gradient(to right, #ff0000, #ff1a1a);
-    box-shadow: black 2px 5px;
-    border-radius: 0 !important;
-}
-
-.btn:hover {
-    box-shadow: black 2px 10px;
-}
-
-.btn:active {
-    background: linear-gradient(to right, #cc0000, #e60000);
-    box-shadow: black 2px 10px;
-}
-
-nav .btn {
-    background: linear-gradient(to right, #ffffff, #f1f1f1);
-    color: black;
-}
-
-nav .btn:hover {
-    color: black;
-}
-
-nav .btn:active {
-    background: linear-gradient(to right, #f2f2f2, #e6e6e6);
-    color: black;
+    background-color: #eeeeff;
+    border-radius: 10px;
 }
 
 .row .btn {
-    width: 30%;
-    margin: .5rem auto;
+    margin: .5rem;
 }
 
 form {
     display: flex;
-    flex-direction: row;
-    width: 100%;
-    align-items: center;
+    flex-direction: column;
+    width: 50%;
+}
+
+form a {
+    color: #00004d !important;
+}
+
+form a:hover {
+    text-decoration: none;
+    color: #0000b3 !important;
+}
+
+form a:active {
+    color: #0000e6 !important;
 }
 
 form button {
-    margin-top: 1rem;
+    margin-top: 2rem;
+    width: 50%;
 }
 
 label {
-    margin-top: .5rem;
+    margin-top: 1rem;
 }
 
-.btn-row {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    width: 50%;
-    margin: 0 auto;
-    margin-top: 1rem;
+input, select {
+    border-radius: 5px;
+    border: none;
+}
+
+.btn {
+    border: none !important;
+}
+
+.btn-primary {
+    background-color: #1a1aff !important;
+    color: white !important;
+}
+
+.btn-primary:hover {
+    background-color: #0000e6 !important;
+}
+
+.btn-primary:active {
+    backgroung-color: #0000b3 !important;
+}
+
+.btn-success {
+    background-color: #00cc99 !important;
+    color: white !important;
+}
+
+.btn-success:hover {
+    background-color: #009973 !important;
+}
+
+.btn-success:active {
+    background-color: #00664d !important;
+}
+
+.btn-danger {
+    background-color: #ff6672 !important;
+    color: white !important;
+}
+
+.btn-danger:hover {
+    background-color: #ff4d5b !important;
+}
+
+.btn-danger:active {
+    background-color: #ff1a2d !important;
 }

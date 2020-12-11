@@ -2,8 +2,8 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <!--<link rel="stylesheet" href="{% static 'projects/main.css' %}">-->
-    <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'projects/main.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Patua+One&family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
@@ -13,7 +13,7 @@
 </head>
 <body>
     <nav class="navbar navbar-dark bg-dark">
-        <a href="{% url 'projects:index' %}" class="navbar.brand">{% if user.is_authenticated %}{{ user.username }}'s{% endif %} Projects</a>
+        <a href="{% url 'projects:index' %}" class="navbar-brand">{% if user.is_authenticated %}{{ user.username }}'s{% endif %} Project Tracker</a>
         <div class="navbar">
             {% if user.is_authenticated %}
                 <a href="{% url 'projects:create_project' %}" class="nav-item nav-link">Add Project</a>
