@@ -13,6 +13,14 @@ def index(request):
     return render(request, 'projects/index.html', context)
 
 
+def index_sorted(request, sort_by):
+    project_list = Project.objects.all().order_by(sort_by)
+    context = {
+        'project_list': project_list,
+    }
+    return render(request, 'projects/index.html', context)
+
+
 def detail(request, project_id):
     project = Project.objects.get(pk=project_id)
     context = {

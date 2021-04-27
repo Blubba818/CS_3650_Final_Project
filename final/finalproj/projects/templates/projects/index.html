@@ -1,21 +1,38 @@
 {% extends 'projects/base.html' %}
 
 {% block body %}
+    <div class="row" id="button_row">
+        <a href="{% url 'projects:create_project' %}" class="btn btn-primary"><i class="fas fa-plus"></i> Add Project</a>
+
+        <button class="btn btn-success dropdown-toggle" type="button" id="sortDropdownButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Sort
+        </button>
+        <div class="dropdown-menu" aria-labelledby="sortDropdownButton">
+            <a class="dropdown-item" href="{% url 'projects:index_sorted' sort_by='name' %}">By Name</a>
+            <a class="dropdown-item" href="{% url 'projects:index_sorted' sort_by='-date_created' %}">By Date Posted (Newest First)</a>
+            <a class="dropdown-item" href="{% url 'projects:index_sorted' sort_by='date_created' %}">By Date Posted (Oldest First)</a>
+            <a class="dropdown-item" href="{% url 'projects:index_sorted' sort_by='priority' %}">By Priority (High to Low)</a>
+            <a class="dropdown-item" href="{% url 'projects:index_sorted' sort_by='-priority' %}">By Priority (Low to High)</a>
+            <a class="dropdown-item" href="{% url 'projects:index_sorted' sort_by='status' %}">By Status</a>
+        </div>
+    </div>
+
     {% for project in project_list %}
         {% if project.created_by == user %}
             <div class="row">
                 <div class="col-md-3">
-                    <img src="../media/{{ project.image }}" height="150px" alt="">
+                    <img src="../../media/{{ project.image }}" height="150px" alt="">
                 </div>
                 <div class="col-md-4">
                     <h3>{{ project.name }}</h3>
                     <h5>Status: {{ project.get_status_display }}</h5>
                     <h6>Priority: {{ project.get_priority_display }}</h6>
+                    <p>Project Posted: {{ project.date_created }}</p>
                 </div>
                 <div class="col-md-2">
-                    <a href="{% url 'projects:detail' project.id %}" class="btn btn-success">Details</a>
-                    <a href="{% url 'projects:update_project' project.id %}" class="btn btn-primary">Edit</a>
-                    <a href="{% url 'projects:delete_project' project.id %}" class="btn btn-danger">Delete</a>
+                    <a href="{% url 'projects:detail' project.id %}" class="btn btn-success"><i class="fas fa-info-circle"></i> See Details</a>
+                    <a href="{% url 'projects:update_project' project.id %}" class="btn btn-primary"><i class="fas fa-edit"></i> Edit</a>
+                    <a href="{% url 'projects:delete_project' project.id %}" class="btn btn-danger"><i class="fas fa-trash-alt"></i> Delete</a>
                 </div>
             </div>
         {% endif %}

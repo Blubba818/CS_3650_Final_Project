@@ -101,7 +101,7 @@ input, select {
 }
 
 .btn-primary:active {
-    backgroung-color: #0000b3 !important;
+    background-color: #0000b3 !important;
 }
 
 .btn-success {
@@ -111,10 +111,12 @@ input, select {
 
 .btn-success:hover {
     background-color: #009973 !important;
+    color: white !important;
 }
 
 .btn-success:active {
     background-color: #00664d !important;
+    color: white !important;
 }
 
 .btn-danger {
@@ -128,4 +130,40 @@ input, select {
 
 .btn-danger:active {
     background-color: #ff1a2d !important;
+}
+
+#delete_form .btn {
+    width: 30%;
+}
+
+#delete_form a {
+    color: white !important;
+}
+
+#delete_form a:hover {
+    color: white !important;
+}
+
+#delete_form a:active {
+    color: white !important;
+}
+
+@media (max-device-width: 768px) {
+
+    .container {
+        width: 90% !important;
+        margin: 0 auto !important;
+        padding: 0 !important;
+    }
+
+    .row {
+        margin: 0 auto !important;
+        width: 100% !important;
+        margin-top: 1.5rem !important;
+    }
+
+    .row .btn {
+        margin: 0 auto;
+        margin-top: .5rem;
+    }
 }
